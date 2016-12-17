@@ -1,4 +1,4 @@
-// import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
 // // The User Reducer
 // const userReducer = function(state = {
@@ -14,18 +14,35 @@
 //     case 'REMOVE_USER': {
 //       return {}
 //     }
+// The User Reducer
+const userReducer = function(state = {
+  isAuthenticated: false,
+}, action) {
+	switch (action.type) {
+		case 'ADD_USER': {
+      return Object.assign({}, state, action.user)
+    }
 
-// 		default: {
-// 			return state
-// 		}
-// 	}
-// }
+    case 'REMOVE_USER': {
+      return {
+        isAuthenticated: false
+      }
+    }
+
+		default: {
+			return state
+		}
+	}
+}
 
 // // Combine Reducers
-// const reducers = combineReducers({
-//   userState: userReducer,
-// });
+const reducers = combineReducers({
+  userState: userReducer,
+});
 
-// const store = createStore(reducers);
+const store = createStore(reducers, {
 
-// export default store
+}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+
+export default store
