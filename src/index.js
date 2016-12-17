@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import $ from 'jquery'
+
 import 'materialize-css'
 
 import App from './App';
@@ -11,3 +13,7 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+$(document).ready(() => {
+	$('.chips').material_chip();
+})
