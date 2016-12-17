@@ -25,6 +25,9 @@
 /* Image */
 .image {
   text-align: center;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 .image img {
   margin-top: 10px;

@@ -32,7 +32,7 @@ class App extends React.Component {
         caption: 'Hello World 1'
       },
       {
-        src: 'http://img.f3.thethao.vnecdn.net/2016/12/17/155556431283154118407944183196-7540-8644-1481984825_490x294.jpg',
+        src: 'http://img.f29.vnecdn.net/2016/12/16/kostroma-6296-1481884038.jpg',
         tags: ['hello1', 'hello2'],
         caption: 'Hello World 1'
       }
