@@ -14,7 +14,7 @@ class SideBar extends React.Component {
 
 	render() {
 		return (
-      <div className="user-info">
+      <div className="sidebar">
         <ul id="slide-out" className="side-nav">
           <li>
             <div className="userView">
@@ -50,7 +50,7 @@ class SideBar extends React.Component {
             <a className="waves-effect" href="#!">Third Link With Waves</a>
           </li>
         </ul>
-        <a href="#" data-activates="slide-out" className="button-collapse">
+        <a href="#" data-activates="slide-out" className="button-collapse indigo btn-large">
           <i className="material-icons">menu</i>
         </a>
       </div>
