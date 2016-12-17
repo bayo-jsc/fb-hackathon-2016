@@ -1,7 +1,9 @@
 import { createStore, combineReducers } from 'redux';
 
 // The User Reducer
-const userReducer = function(state = {}, action) {
+const userReducer = function(state = {
+  
+}, action) {
 	switch (action) {
 		case 'ADD_USER': {
       newState = {...state}

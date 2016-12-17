@@ -17,7 +17,9 @@ class App extends React.Component {
     }
   }
 
-  updateAuthen(isAuthenticated, userData) {
+  updateAuthen(isAuthenticated, user) {
+    const userData = Object.assign({}, this.state.userData, user)
+
     this.setState({
       isAuthenticated,
       userData,
