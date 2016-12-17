@@ -13,14 +13,16 @@ class Image extends React.Component {
       </div>
     ))
     return (
-      <div className="image">
+      <div className="image indigo lighten-5">
         <img className="materialboxed" src={ this.props.src } />
         <div className="tags">  
           { tags }
         </div> 
-        <div className="caption">
+        <div className="caption indigo lighten-3">
           { this.props.caption }
         </div>
+
+        <div className="divider" />
       </div>
     )
   }

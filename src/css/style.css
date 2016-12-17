@@ -23,3 +23,32 @@
 }
 
 /* Image */
+.image {
+  text-align: center;
+}
+.image img {
+  margin-top: 10px;
+  width: 80%;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.image .tags {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.image .caption {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+  border: 1px solid transparent;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.image .divider {
+  margin-top: 10px;
+}
