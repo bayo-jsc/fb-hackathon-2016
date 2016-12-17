@@ -5,6 +5,8 @@ import Footer from './components/Footer'
 import Login from './components/Login'
 import Uploader from './components/Uploader'
 import ImageList from './components/ImageList'
+import Homepage from './components/Homepage'
+import UserInfo from './components/UserInfo'
 
 class App extends React.Component {
   constructor() {
@@ -38,19 +40,21 @@ class App extends React.Component {
     return (
       <div className="App indigo lighten-4">
         <Navbar />
-        <Uploader />
-        <ImageList images={ images } />
-        <main>
-          {
-            this.state.isAuthenticated
-              ? <Uploader />
-              : <Login update={this.updateAuthen.bind(this)}></Login>
-          }
-        </main>
-        <Footer />
+        <UserInfo />
       </div>
     );
   }
 }
 
 export default App;
+
+        // <Uploader />
+        // <ImageList images={ images } />
+        // <main>
+        //   {
+        //     this.state.isAuthenticated
+        //       ? <Uploader />
+        //       : <Login update={this.updateAuthen.bind(this)}></Login>
+        //   }
+        // </main>
+        // <Footer />
