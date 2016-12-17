@@ -40,9 +40,10 @@ class App extends React.Component {
       }
     ]
     return (
-      <div className="App indigo lighten-4">
+      <div className="App">
         <Navbar />
         <SideBar />
+        <Homepage />
       </div>
     );
   }

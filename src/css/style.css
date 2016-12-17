@@ -39,6 +39,22 @@
   top: 5px;
 }
 
+/* Homepage */
+.parallax img {
+  opacity: 0.8;
+}
+
+.parallax-container .btn-large {
+  display: block;
+  margin: 30% auto;
+}
+
+.parallax-container p {
+  font-size: 30px;
+  display: block;
+  font-weight: bold;
+}
+
 /* Image */
 .image {
   text-align: center;
