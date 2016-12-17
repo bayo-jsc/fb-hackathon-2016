@@ -39,7 +39,11 @@ class PostToFacebook extends Component {
 
   postToFacebook() {
     axios.post(`${this.props.userData.userID}/photos`, {
-      caption: this.props.caption + this.props.tags.reduce((a, b) => `${a}, #${b}`, ''),
+      caption: this.props.caption
+        + this.props.tags.reduce((a, b, index) => {
+          if (index) return `${a}, #${b}`
+          else return `${a}`
+        }, ''),
       privacy: this.state.privacy,
       url: this.props.image,
       access_token: this.props.userData.token,
