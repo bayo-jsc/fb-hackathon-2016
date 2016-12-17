@@ -8,6 +8,7 @@ import store from './store'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './components/Login'
+import Logout from './components/Logout'
 import Uploader from './components/Uploader'
 import ImageList from './components/ImageList'
 import Homepage from './components/Homepage'
@@ -16,10 +17,16 @@ import SideBar from './components/SideBar'
 class App extends React.Component {
   constructor() {
     super()
+
     this.state = {
-      isAuthenticated: false,
       userData: {},
     }
+
+    store.subscribe(() => {
+      this.setState({
+        userData: store.getState().userState
+      })
+    })
   }
 
   render() {
@@ -39,7 +46,7 @@ class App extends React.Component {
       <Provider store={store}>
         <div className="App">
           <Navbar />
-          <Login />
+          {this.state.userData.isAuthenticated ? <Logout /> : <Login />}
           <SideBar />
         </div>
       </Provider>
