@@ -42,6 +42,7 @@ class PostToFacebook extends Component {
       caption: this.props.caption + this.props.tags.reduce((a, b) => `${a}, #${b}`, ''),
       privacy: this.state.privacy,
       url: this.props.image,
+      access_token: this.props.userData.token,
     }).then(() => {
       this.showNotification('Post success!')
     }, () => {
