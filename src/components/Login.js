@@ -1,4 +1,4 @@
-import React, { Component } from 'react'response.data
+import React, { Component } from 'react'
 import store from '../store'
 
 export default class Login extends Component {
@@ -13,22 +13,24 @@ export default class Login extends Component {
   openLoginForm () {
     window.FB.login((response) => {
       if (response.authResponse) {
-        const fbUserData = {
-          id: response.authResponse.userID,
-          token: response.authResponse.accessToken,
-        }
-
         store.dispatch({
           type: 'ADD_USER',
-          user: fbUserData,
+          user: {
+            isAuthenticated: true,
+            id: response.authResponse.userID,
+            token: response.authResponse.accessToken,
+          },
         })
 
         window.FB.api(
           `/${response.authResponse.userID}/picture`,
           (response) => {
             if (response && !response.error) {
-              this.props.update(true, {
-                avatar: response.data.url,
+              store.dispatch({
+                type: 'ADD_USER',
+                user: {
+                  avatar: response.data.url,
+                }
               })
             }
           }
@@ -38,8 +40,11 @@ export default class Login extends Component {
           `/${response.authResponse.userID}?fields=cover`,
           (response) => {
             if (response && !response.error) {
-              this.props.update(true, {
-                cover: response.cover.source,
+              store.dispatch({
+                type: 'ADD_USER',
+                user: {
+                  cover: response.cover.source,
+                }
               })
             }
           }
