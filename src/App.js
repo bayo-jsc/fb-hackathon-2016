@@ -1,6 +1,5 @@
 import React from 'react';
 import { Provider } from 'react-redux'
-
 import { Router, Route, hashHistory } from 'react-router'
 
 import store from './store'
@@ -13,6 +12,7 @@ import Uploader from './components/Uploader'
 import ImageList from './components/ImageList'
 import Homepage from './components/Homepage'
 import SideBar from './components/SideBar'
+import PostToFacebook from './components/PostToFacebook'
 
 class App extends React.Component {
   constructor() {
@@ -48,6 +48,12 @@ class App extends React.Component {
           <Navbar />
           {this.state.userData.isAuthenticated ? <Logout /> : <Login />}
           <SideBar />
+          <Router history={hashHistory}>
+            <Route path="/" component={Homepage}></Route>
+            <Route path="/upload" component={Uploader}></Route>
+            <Route path="/share" component={PostToFacebook}></Route>
+            <Route path="/list" component={ImageList}></Route>
+          </Router>
         </div>
       </Provider>
     );
