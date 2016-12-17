@@ -33,8 +33,8 @@ class PostToFacebook extends Component {
       noti: {
         isActive: true,
         message,
-      }
-    }
+      },
+    })
   }
 
   postToFacebook() {
