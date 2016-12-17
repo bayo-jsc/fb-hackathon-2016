@@ -6,18 +6,21 @@ class Image extends React.Component {
   }
 
   render() {
-    let tags = this.props.tags.forEach((tag) => (
-      <div className="chip">
+    let tags = this.props.tags.map((tag) => (
+      <div className="chip" key={ tag }>
+        { tag }
         <i className="close material-icons">close</i>
       </div>
     ))
     return (
-      <div>
-        <img className="materialboxed" width="650" src="{ this.props.src }" />
+      <div className="image">
+        <img className="materialboxed" src={ this.props.src } />
         <div className="tags">  
           { tags }
-        </div>   
-         
+        </div> 
+        <div className="caption">
+          { this.props.caption }
+        </div>
       </div>
     )
   }
