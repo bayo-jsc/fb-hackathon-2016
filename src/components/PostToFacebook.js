@@ -53,10 +53,20 @@ class PostToFacebook extends Component {
   render() {
     return (
       <div>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'EVERYONE').bind(this)}>EVERYONE</input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'ALL_FRIENDS').bind(this)}>All Friends</input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'FRIENDS_OF_FRIENDS').bind(this)}>Friends of friends</input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'SELF').bind(this)}>Self</input>
+        <input
+          type="radio"
+          group="privacy"
+          onClick={this.updateChoice('privacy', 'EVERYONE').bind(this)}
+          selected={this.state.privacy === 'EVERYONE'}
+        >
+          EVERYONE
+        </input>
+        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'ALL_FRIENDS').bind(this)}
+               selected={this.state.privacy === 'ALL_FRIENDS'}>All Friends</input>
+        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'FRIENDS_OF_FRIENDS').bind(this)}
+               selected={this.state.privacy === 'FRIENDS_OF_FRIENDS'}>Friends of friends</input>
+        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'SELF').bind(this)}
+               selected={this.state.privacy === 'SELF'}>Self</input>
 
         <button onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
 
