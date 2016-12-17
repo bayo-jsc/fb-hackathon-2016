@@ -8,11 +8,6 @@ const uploader = new FineUploaderTraditional({
       endpoint: 'http://test.bayo.vn/api/upload/images',
       inputName: 'images[]'
     },
-    callbacks: {
-      onComplete: (id, name, response) => {
-        console.log(id, name, response)
-      }
-    }
   }
 })
 
