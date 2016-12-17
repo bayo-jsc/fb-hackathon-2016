@@ -38,7 +38,7 @@ class App extends React.Component {
       }
     ]
     return (
-      <div className="App">
+      <div className="App indigo lighten-4">
         <Navbar />
         <Uploader />
         <ImageList images={ images } />

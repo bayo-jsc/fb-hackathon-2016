@@ -4,7 +4,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <nav>
-        <div className="nav-wrapper">
+        <div className="nav-wrapper indigo darken-2">
           <a href="#" className="brand-logo">FACE ...</a>
           {/*<ul id="nav-mobile" className="right hide-on-med-and-down">*/}
             {/*<li><a href="#">Menu 1</a></li>*/}

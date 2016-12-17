@@ -15,5 +15,7 @@ ReactDOM.render(
 );
 
 $(document).ready(() => {
-	$('.chips').material_chip();
+	$('.chips .close').click(() => {
+		$(this).parentNode().hide()
+	});
 })
