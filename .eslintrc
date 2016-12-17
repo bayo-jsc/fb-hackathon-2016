@@ -1,0 +1,9 @@
+{
+  "extends": "react-app",
+  "globals": {
+    "FB"
+  },
+  "rules": {
+    "no-undef": "warns"
+  }
+}
