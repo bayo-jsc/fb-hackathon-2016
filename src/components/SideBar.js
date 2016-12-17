@@ -19,7 +19,7 @@ class SideBar extends React.Component {
           <li>
             <div className="userView">
               <div className="background">
-                <img src="images/office.jpg" role="img-background" />
+                <img src="wallpaper.jpg" role="wallpaper" />
               </div>
               <a href="#!user">
                 <img className="circle" src="images/yuna.jpg" role="user" />
