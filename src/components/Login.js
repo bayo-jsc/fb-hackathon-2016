@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react'response.data
+import store from '../store'
 
 export default class Login extends Component {
   render () {
@@ -17,7 +18,10 @@ export default class Login extends Component {
           token: response.authResponse.accessToken,
         }
 
-        this.props.update(true, fbUserData)
+        store.dispatch({
+          type: 'ADD_USER',
+          user: fbUserData,
+        })
       } else {
         console.log('Login failed!')
       }
