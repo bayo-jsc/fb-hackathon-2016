@@ -2,14 +2,14 @@ import React from 'react';
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Uploader from './components/Uploader'
 
 class App extends React.Component {
   render() {
     return (
       <div className="App">
         <Navbar />
-        <main>
-        </main>
+        <Uploader />
         <Footer />
       </div>
     );
