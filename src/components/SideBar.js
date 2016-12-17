@@ -5,7 +5,7 @@ window.jQuery = $
 import 'materialize-css'
 window.Vel = require('materialize-css/js/velocity.min')
 
-class UserInfo extends React.Component {
+class SideBar extends React.Component {
   componentDidMount() {
     $(function() {
       $(".button-collapse").sideNav();
@@ -58,4 +58,4 @@ class UserInfo extends React.Component {
 	}
 }
 
-export default UserInfo
+export default SideBar

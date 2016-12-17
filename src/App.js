@@ -6,7 +6,7 @@ import Login from './components/Login'
 import Uploader from './components/Uploader'
 import ImageList from './components/ImageList'
 import Homepage from './components/Homepage'
-import UserInfo from './components/UserInfo'
+import SideBar from './components/SideBar'
 
 class App extends React.Component {
   constructor() {
@@ -40,7 +40,7 @@ class App extends React.Component {
     return (
       <div className="App indigo lighten-4">
         <Navbar />
-        <UserInfo />
+        <SideBar />
       </div>
     );
   }
