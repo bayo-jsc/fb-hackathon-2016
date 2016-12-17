@@ -3,6 +3,7 @@ import React from 'react';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Login from './components/Login'
+import Uploader from './components/Uploader'
 
 class App extends React.Component {
   constructor() {
@@ -25,7 +26,11 @@ class App extends React.Component {
       <div className="App">
         <Navbar />
         <main>
-          { this.state.isAuthenticated ? 'dfgdfg' : <Login update={this.updateAuthen.bind(this)}></Login> }
+          {
+            this.state.isAuthenticated
+              ? <Uploader />
+              : <Login update={this.updateAuthen.bind(this)}></Login>
+          }
         </main>
         <Footer />
       </div>
