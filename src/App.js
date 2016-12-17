@@ -1,6 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux'
 
+import { Router, Route, hashHistory } from 'react-router'
+
 import store from './store'
 
 import Navbar from './components/Navbar'
