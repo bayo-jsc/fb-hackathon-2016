@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Notification } from 'react-notification'
 import axios from 'axios'
+import { connect } from 'react-redux'
+
+import store from '../store'
 
 const privacy = {
   EVERYONE: 'EVERYONE',
@@ -20,6 +23,8 @@ class PostToFacebook extends Component {
         message: '',
       },
     }
+
+    console.log(store.getState())
   }
 
   updateChoice(kind, choice) {

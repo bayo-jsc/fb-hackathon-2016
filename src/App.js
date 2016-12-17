@@ -1,4 +1,7 @@
 import React from 'react';
+import { Provider } from 'react-redux'
+
+import store from './store'
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -17,15 +20,6 @@ class App extends React.Component {
     }
   }
 
-  updateAuthen(isAuthenticated, user) {
-    const userData = Object.assign({}, this.state.userData, user)
-
-    this.setState({
-      isAuthenticated,
-      userData,
-    })
-  }
-
   render() {
     let images = [
       {
@@ -40,10 +34,13 @@ class App extends React.Component {
       }
     ]
     return (
-      <div className="App indigo lighten-4">
-        <Navbar />
-        <SideBar />
-      </div>
+      <Provider store={store}>
+        <div className="App indigo lighten-4">
+          <Navbar />
+          <Login />
+          <SideBar />
+        </div>
+      </Provider>
     );
   }
 }
