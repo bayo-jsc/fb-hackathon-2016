@@ -19,7 +19,7 @@ class Image extends React.Component {
           { tags }
         </div> 
         <div className="caption indigo lighten-3">
-          { this.props.caption }
+          { this.props.caption || '' }
         </div>
 
         <div className="divider" />
