@@ -1,4 +1,4 @@
-import React, { Component } from 'react'response.data
+import React, { Component } from 'react'
 import store from '../store'
 
 export default class Login extends Component {
