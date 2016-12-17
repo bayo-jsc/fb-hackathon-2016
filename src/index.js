@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import $ from 'jquery'
+import $ from 'jquery'
+window.$ = $
+window.jQuery = $
 
 import 'materialize-css'
 
@@ -13,3 +15,5 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
+
+

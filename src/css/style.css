@@ -22,6 +22,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* SideBar */
+.userView .background img {
+  width: 100%;
+}
+
 /* Image */
 .image {
   text-align: center;
