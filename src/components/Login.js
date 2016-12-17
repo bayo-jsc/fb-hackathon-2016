@@ -18,6 +18,29 @@ export default class Login extends Component {
         }
 
         this.props.update(true, fbUserData)
+
+        window.FB.api(
+          `/${response.authResponse.userID}/picture`,
+          (response) => {
+            if (response && !response.error) {
+              this.props.update(true, {
+                avatar: response.data.url,
+              })
+            }
+          }
+        );
+
+        window.FB.api(
+          `/${response.authResponse.userID}?fields=cover`,
+          (response) => {
+            if (response && !response.error) {
+              this.props.update(true, {
+                cover: response.cover.source,
+              })
+            }
+          }
+        );
+
       } else {
         console.log('Login failed!')
       }
