@@ -39,7 +39,6 @@ class App extends React.Component {
           <Navbar />
           <Login />
           <SideBar />
-          <Homepage />
         </div>
       </Provider>
     );

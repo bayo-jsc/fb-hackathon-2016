@@ -4,7 +4,7 @@ import store from '../store'
 export default class Login extends Component {
   render () {
     return (
-      <button className="waves-effect waves-light btn-large" onClick={this.openLoginForm.bind(this)}>
+      <button className="waves-effect waves-light btn-large login" onClick={this.openLoginForm.bind(this)}>
         Login <i className="material-icons right">send</i>
       </button>
     )
