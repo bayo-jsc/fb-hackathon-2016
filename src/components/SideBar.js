@@ -5,10 +5,25 @@ window.jQuery = $
 import 'materialize-css'
 window.Vel = require('materialize-css/js/velocity.min')
 
+import store from '../store'
+
 class SideBar extends React.Component {
   componentDidMount() {
     $(function() {
       $(".button-collapse").sideNav();
+    })
+  }
+
+  constructor() {
+    super()
+    this.state = {
+      userData: {}
+    }
+
+    store.subscribe(() => {
+      this.setState({
+        userData: store.getState().userState
+      })
     })
   }
 
@@ -21,7 +36,12 @@ class SideBar extends React.Component {
               <div className="background">
                 <img src="wallpaper.jpg" role="wallpaper" />
               </div>
-              <a href="#!user">
+              {
+                !this.state.userData.isAuthenticated
+                  ? 
+                  : 
+              }
+              <a href="#">
                 <img className="circle" src="images/yuna.jpg" role="user" />
               </a>
               <a href="#!name">
