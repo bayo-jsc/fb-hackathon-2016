@@ -39,7 +39,7 @@ class PostToFacebook extends Component {
 
   postToFacebook() {
     axios.post(`${this.props.userData.userID}/photos`, {
-      caption: this.props.caption,
+      caption: this.props.caption + this.props.tags.reduce((a, b) => `${a}, #${b}`, ''),
       privacy: this.state.privacy,
       url: this.props.image,
     }).then(() => {
@@ -71,7 +71,8 @@ class PostToFacebook extends Component {
 PostToFacebook.PropTypes = {
   userData: React.PropTypes.object,
   caption: React.PropTypes.string,
-  image: React.PropTypes.FormData,
+  image: React.PropTypes.string,
+  tags: React.PropTypes.array,
 }
 
 export default PostToFacebook
