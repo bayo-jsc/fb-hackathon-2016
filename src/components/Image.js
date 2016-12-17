@@ -17,7 +17,7 @@ class Image extends React.Component {
     ))
     return (
       <div className="image indigo lighten-5">
-        <img className="materialboxed" src={ this.props.src } />
+        <img className="materialboxed" src={ this.props.src } alt={ this.props.src } />
         <div className="tags">  
           { tags }
         </div> 

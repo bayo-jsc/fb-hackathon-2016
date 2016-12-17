@@ -1,5 +1,4 @@
 import React from 'react';
-import $ from 'jquery'
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -24,7 +23,6 @@ class App extends React.Component {
   }
 
   render() {
-    let tags = ['doing', 'something']
     let images = [
       {
         src: 'http://img.f3.thethao.vnecdn.net/2016/12/17/155556431283154118407944183196-7540-8644-1481984825_490x294.jpg',

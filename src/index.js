@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery'
+// import $ from 'jquery'
 
 import 'materialize-css'
 
@@ -13,9 +13,3 @@ ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
-
-$(document).ready(() => {
-	$('.chips .close').click(() => {
-		$(this).parentNode().hide()
-	});
-})

@@ -2,9 +2,6 @@ import React from 'react'
 import Image from './Image.js'
 
 class ImageList extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
   	let images = this.props.images.map((image) => (
