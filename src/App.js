@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
-import 'materialize-css/dist/css/materialize.min.css'
+import React from 'react';
 
-import './App.css';
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
-
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Welcome to FaceTub</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Navbar />
+        <main></main>
+        <Footer />
       </div>
     );
   }
