@@ -8,8 +8,8 @@ class Image extends React.Component {
     this.state = {
       src: this.props.src,
       tags: this.props.tags,
-      captions: this.props.captions
-,      userData: store.getState().userState
+      captions: this.props.captions,
+      userData: store.getState().userState
     }
   }
 
@@ -30,7 +30,7 @@ class Image extends React.Component {
     ))
 
     let captions = this.state.captions.map((caption, index) => (
-      <div key={ caption }>
+      <div key={ caption + index }>
       <div className="caption indigo lighten-3" >
         { caption } 
       </div>

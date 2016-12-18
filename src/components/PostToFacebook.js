@@ -15,6 +15,7 @@ class PostToFacebook extends Component {
         isActive: false,
         message: '',
       },
+      isLoading: false,
       userData: store.getState().userState
     }
   }
@@ -43,6 +44,10 @@ class PostToFacebook extends Component {
   }
 
   postToFacebook = () => {
+    this.setState({
+      isLoading: true
+    })
+
     axios.post(`https://graph.facebook.com/v2.8/${this.state.userData.id}/photos`, {
       caption: this.props.caption
         + this.props.tags.reduce((a, b, index) => {
@@ -55,6 +60,10 @@ class PostToFacebook extends Component {
       this.showNotification('Post success!')
     }, () => {
       this.showNotification('Failed')
+    }).then(() => {
+    this.setState({
+      isLoading: false
+    }) 
     })
   }
 
@@ -67,8 +76,11 @@ class PostToFacebook extends Component {
           onClick={this.updateChoice.bind(this, 'privacy', 'EVERYONE')}
           selected={this.state.privacy === 'EVERYONE'}
         />
-
-        <button className="btn blue" style={{ marginTop: '10px' }} onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
+        {
+          this.state.isLoading 
+            ? 'Uploading' 
+            : <button className="btn blue" style={{ marginTop: '10px' }} onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
+        }
 
         <Notification
           isActive={this.state.noti.isActive}
