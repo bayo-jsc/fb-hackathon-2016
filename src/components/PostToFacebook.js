@@ -96,7 +96,6 @@ class PostToFacebook extends Component {
 }
 
 PostToFacebook.PropTypes = {
-  userData: React.PropTypes.object,
   caption: React.PropTypes.string,
   image: React.PropTypes.string,
   tags: React.PropTypes.array,

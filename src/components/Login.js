@@ -40,10 +40,11 @@ export default class Login extends Component {
           `/${response.authResponse.userID}?fields=cover`,
           (response) => {
             if (response && !response.error) {
+              const cover = response.cover ? response.cover.source : ''
               store.dispatch({
                 type: 'ADD_USER',
                 user: {
-                  cover: response.cover.source,
+                  cover,
                 }
               })
             }

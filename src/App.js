@@ -21,12 +21,14 @@ class App extends React.Component {
     this.state = {
       userData: {},
     }
+  }
 
+  componentDidMount = () => {
     store.subscribe(() => {
       this.setState({
         userData: store.getState().userState
       })
-    })
+    }) 
   }
 
   render() {
