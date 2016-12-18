@@ -15,7 +15,7 @@ class PostToFacebook extends Component {
         isActive: false,
         message: '',
       },
-      userData: {},
+      userData: store.getState().userState
     }
   }
 

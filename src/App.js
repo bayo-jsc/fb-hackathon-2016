@@ -59,8 +59,6 @@ class App extends React.Component {
             </Router>
           </div>
           <Footer />
-
-          <ImageList images={ images } />
         </div>
       </Provider>
     );

@@ -8,21 +8,20 @@ export default class ImageList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      images: [],
+      images: store.getState().image.images
     }
-    console.log(this.props.images)
   }
 
-  // componentDidMount = () => {
-  //   store.subscribe(() => {
-  //     this.setState({
-  //       images: store.getState().image.images
-  //     })
-  //   })
-  // }
+  componentDidMount = () => {
+    store.subscribe(() => {
+      this.setState({
+        images: store.getState().image.images
+      })
+    })
+  }
 
   componentWillUnmount = () => {
-    // store.unsubscribe()
+    store.unsubscribe()
   }
 
 
@@ -31,8 +30,8 @@ export default class ImageList extends React.Component {
   	return (
   		<div className="image-list">
         {
-          this.props.images.map((image) => (
-            <Image src={ image.src } tags={ image.tags } captions={ image.captions } key={ image.src } />
+          this.state.images.map((image, index) => (
+            <Image src={ image.src } tags={ image.tags } captions={ image.captions } key={ index + image.src } />
           ))
         }
       </div>

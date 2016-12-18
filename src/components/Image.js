@@ -9,7 +9,7 @@ class Image extends React.Component {
       src: this.props.src,
       tags: this.props.tags,
       captions: this.props.captions,
-      userData: {}
+      userData: store.getState().userState
     }
   }
 
