@@ -2,6 +2,7 @@ import React from 'react'
 import FineUploaderTraditional from 'react-fine-uploader'
 import Gallery from 'react-fine-uploader/components/gallery'
 import store from '../store'
+import { Router, Link } from 'react-router'
 
 const uploader = new FineUploaderTraditional({
   options: {
@@ -11,7 +12,7 @@ const uploader = new FineUploaderTraditional({
     },
     callbacks: {
       onComplete(id, name, response, xhr) {
-        console.log(response)
+        console.log(response.images[0])
         store.dispatch({
           type: 'ADD_IMAGE',
           image: response.images[0]
@@ -28,7 +29,10 @@ const uploader = new FineUploaderTraditional({
 class Uploader extends React.Component {
 	render() {
     return (
-      <Gallery uploader={ uploader } />
+      <div className="uploader" style={{ textAlign: 'center' }}>
+        <Gallery uploader={ uploader } />
+        <Link to="/list" className="btn-large" style={{ margin: '10px auto' }}>View Images</Link>
+      </div>
     )
 	}
 }
