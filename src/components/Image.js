@@ -4,8 +4,10 @@ class Image extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      tags: this.props.tags
+      tags: this.props.tags,
+      captions: this.props.captions,
     }
+    console.log(this.state)
   }
 
   render() {
@@ -17,7 +19,7 @@ class Image extends React.Component {
     ))
 
     let captions = this.state.captions.map((caption, index) => (
-      <div className="caption indigo lighten-3">
+      <div className="caption indigo lighten-3" key={ caption }>
         { caption }
       </div>
     ))

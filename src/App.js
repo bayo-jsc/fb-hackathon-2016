@@ -39,7 +39,7 @@ class App extends React.Component {
       {
         src: 'http://img.f29.vnecdn.net/2016/12/16/kostroma-6296-1481884038.jpg',
         tags: ['hello1', 'hello2'],
-        caption: ['Hello World 1', 'Hello World 2']
+        captions: ['Hello World 1', 'Hello World 2']
       }
     ]
     return (
@@ -59,7 +59,7 @@ class App extends React.Component {
             </Router>
           </div>
           <Footer />
-          
+
           <ImageList images={ images } />
         </div>
       </Provider>
@@ -68,14 +68,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-        // <Uploader />
-        // <ImageList images={ images } />
-        // <main>
-        //   {
-        //     this.state.isAuthenticated
-        //       ? <Uploader />
-        //       : <Login update={this.updateAuthen.bind(this)}></Login>
-        //   }
-        // </main>
-        // <Footer />

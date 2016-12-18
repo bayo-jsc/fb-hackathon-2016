@@ -10,6 +10,7 @@ export default class ImageList extends React.Component {
     this.state = {
       images: [],
     }
+    console.log(this.props.images)
   }
 
   componentDidMount = () => {
@@ -30,8 +31,8 @@ export default class ImageList extends React.Component {
   	return (
   		<div className="image-list">
         {
-          this.state.images.map((image) => (
-            <Image src={ image.src } tags={ image.tags } caption={ image.caption } key={ image.src } />
+          this.props.images.map((image) => (
+            <Image src={ image.src } tags={ image.tags } captions={ image.captions } key={ image.src } />
           ))
         }
       </div>
