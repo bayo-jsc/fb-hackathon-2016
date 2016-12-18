@@ -31,7 +31,7 @@ export default class ImageList extends React.Component {
   	return (
   		<div className="image-list">
         {
-          this.props.images.map((image) => (
+          this.state.images.map((image) => (
             <Image src={ image.src } tags={ image.tags } captions={ image.captions } key={ image.src } />
           ))
         }

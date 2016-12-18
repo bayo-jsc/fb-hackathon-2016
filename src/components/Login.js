@@ -10,7 +10,7 @@ export default class Login extends Component {
     )
   }
 
-  openLoginForm () {
+  openLoginForm = () => {
     window.FB.login((response) => {
       if (response.authResponse) {
         store.dispatch({

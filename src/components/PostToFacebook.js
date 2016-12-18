@@ -24,7 +24,9 @@ class PostToFacebook extends Component {
       },
       userData: {},
     }
+  }
 
+  componentDidMount = () => {
     store.subscribe(() => {
       this.setState({
         userData: store.getState().userState
