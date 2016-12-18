@@ -56,8 +56,8 @@ class SideBar extends React.Component {
             </div>
           </li>
           <li>
-            <a href="#!">
-              <i className="material-icons">upload</i>Upload
+            <a href="/#/upload">
+              <i className="material-icons">publish</i>Upload
             </a>
           </li>
           <li>
