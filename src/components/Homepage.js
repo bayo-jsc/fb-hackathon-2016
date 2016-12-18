@@ -4,6 +4,7 @@ window.$ = $
 window.jQuery = $
 import 'materialize-css'
 window.Vel = require('materialize-css/js/velocity.min')
+import { Link } from 'react-router'
 
 class Homepage extends React.Component {
   componentDidMount() {

@@ -16,14 +16,14 @@ class Navbar extends React.Component {
           </a>
           <ul>
             <li>
-              <Link to="/upload" className="btn-floating green">
+              <a href="/upload" className="btn-floating green">
                 <i className="material-icons">publish</i>
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="/share" className="btn-floating blue">
+              <a href="/share" className="btn-floating blue">
                 <i className="material-icons">share</i>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

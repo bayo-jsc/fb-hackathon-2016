@@ -24,7 +24,6 @@ class PostToFacebook extends Component {
       },
       userData: {},
     }
-    console.log('Done constructor')
   }
 
   componentDidMount = () => {
