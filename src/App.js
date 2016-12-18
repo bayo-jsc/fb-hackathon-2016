@@ -50,12 +50,10 @@ class App extends React.Component {
           <SideBar />
           <div className="container">
             <Router history={hashHistory}>
-              <Route>
                 <Route path="/" component={Homepage}></Route>
                 <Route path="/upload" component={Uploader}></Route>
                 <Route path="/share" component={PostToFacebook}></Route>
                 <Route path="/list" component={ImageList}></Route>
-              </Route>
             </Router>
           </div>
           <Footer />
