@@ -5,10 +5,25 @@ window.jQuery = $
 import 'materialize-css'
 window.Vel = require('materialize-css/js/velocity.min')
 
+import store from '../store'
+
 class SideBar extends React.Component {
   componentDidMount() {
     $(function() {
       $(".button-collapse").sideNav();
+    })
+  }
+
+  constructor() {
+    super()
+    this.state = {
+      userData: {}
+    }
+
+    store.subscribe(() => {
+      this.setState({
+        userData: store.getState().userState
+      })
     })
   }
 
@@ -19,35 +34,44 @@ class SideBar extends React.Component {
           <li>
             <div className="userView">
               <div className="background">
-                <img src="wallpaper.jpg" role="wallpaper" />
+                <img src="wallpaper.jpg" role={
+                  this.state.userData.isAuthenticated
+                  ? this.state.userData.cover : "wallpaper"
+                } />
               </div>
-              <a href="#!user">
-                <img className="circle" src="images/yuna.jpg" role="user" />
-              </a>
-              <a href="#!name">
-                <span className="white-text name">John Doe</span>
-              </a>
-              <a href="#!email">
-                <span className="white-text email">jdandturk@gmail.com</span>
-              </a>
+              {
+                this.state.userData.isAuthenticated
+                  ?
+                  <div> 
+                    <a href="#">
+                      <img className="circle" src={ this.state.userData.avatar } role="user" />
+                    </a>
+                    <a href="#">
+                      <span className="white-text name">John Doe</span>
+                    </a>
+                  </div>
+                  : ''
+              }
+              
             </div>
           </li>
           <li>
-            <a href="#!">
-              <i className="material-icons">cloud</i>First Link With Icon
+            <a href="/#/upload">
+              <i className="material-icons">publish</i>Upload
             </a>
-          </li>
-          <li>
-            <a href="#!">Second Link</a>
           </li>
           <li>
             <div className="divider"></div>
           </li>
           <li>
-            <a className="subheader">Subheader</a>
+            <a className="subheader">Setting</a>
           </li>
           <li>
-            <a className="waves-effect" href="#!">Third Link With Waves</a>
+            {
+              this.state.userData.isAuthenticated 
+              ? <a className="waves-effect" href="#!">Logout</a>
+              : <a className="waves-effect" href="">Login</a>
+            }
           </li>
         </ul>
         <a href="#" data-activates="slide-out" className="button-collapse indigo btn-large">

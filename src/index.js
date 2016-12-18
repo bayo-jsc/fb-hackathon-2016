@@ -14,9 +14,7 @@ import 'materialize-css/dist/css/materialize.min.css'
 import './css/style.css'
 
 ReactDOM.render(
-  <Router history={ hashHistory }>
-  	<Router path="/" component={ App } />
-  </Router>,
+  <App />,
   document.getElementById('root')
 );
 
