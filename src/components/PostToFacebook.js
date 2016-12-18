@@ -17,6 +17,7 @@ class PostToFacebook extends Component {
       },
       userData: {},
     }
+    console.log('Done constructor')
   }
 
   componentDidMount = () => {
@@ -64,18 +65,17 @@ class PostToFacebook extends Component {
       <div>
         <input
           type="radio"
-          group="privacy"
-          onClick={this.updateChoice('privacy', 'EVERYONE')}
+          name="privacy"
+          onClick={this.updateChoice.bind(this, 'privacy', 'EVERYONE')}
           selected={this.state.privacy === 'EVERYONE'}
-        >
-          EVERYONE
-        </input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'ALL_FRIENDS')}
-               selected={this.state.privacy === 'ALL_FRIENDS'}>All Friends</input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'FRIENDS_OF_FRIENDS')}
-               selected={this.state.privacy === 'FRIENDS_OF_FRIENDS'}>Friends of friends</input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'SELF')}
-               selected={this.state.privacy === 'SELF'}>Self</input>
+        />
+          
+        <input type="radio" name="privacy" onClick={this.updateChoice.bind(this, 'privacy', 'ALL_FRIENDS')}
+               selected={this.state.privacy === 'ALL_FRIENDS'} />
+        <input type="radio" name="privacy" onClick={this.updateChoice.bind(this, 'privacy', 'FRIENDS_OF_FRIENDS')}
+               selected={this.state.privacy === 'FRIENDS_OF_FRIENDS'} />
+        <input type="radio" name="privacy" onClick={this.updateChoice.bind(this, 'privacy', 'SELF')}
+               selected={this.state.privacy === 'SELF'} />
 
         <button onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
 
