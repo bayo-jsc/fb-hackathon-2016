@@ -11,3 +11,17 @@ Ever struggled coming up with a perfect caption for your Facebook picture? Image
 3. Press `Upload image` button or drop any image you want to upload to Facebook.
 4. Press `View image` to choose your caption for each of image.
 5. Press to any caption you want and done, your image and caption is in your Facebook.
+
+
+## Technology
+
+Image analysing and labeling: Google Cloud Vision API
+
+Custom database: PostgreSQL
+
+Facebook APIs used: Login API, Graph API
+
+
+## Screenshots
+(Image 1)[https://snag.gy/SOrDmP.jpg]
+(Image 2)[https://snag.gy/INSnWZ.jpg]
