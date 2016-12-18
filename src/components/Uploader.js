@@ -1,6 +1,7 @@
 import React from 'react'
 import FineUploaderTraditional from 'react-fine-uploader'
 import Gallery from 'react-fine-uploader/components/gallery'
+import store from '../store'
 
 const uploader = new FineUploaderTraditional({
   options: {
@@ -11,6 +12,10 @@ const uploader = new FineUploaderTraditional({
     callbacks: {
       onComplete(id, name, response, xhr) {
         console.log(response)
+        store.dispatch({
+          type: 'ADD_IMAGE',
+          image: response.images[0]
+        })
       },
 
       onAllComplete(idList, failed) {
