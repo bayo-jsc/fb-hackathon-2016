@@ -2,7 +2,7 @@
 
 ## Description:
 
-This website helps you to generate best captions for your new images.
+Ever struggled coming up with a perfect caption for your Facebook picture? ImageCap can "understand" your picture and suggest funny and relevant captions for you.   
 
 ## How to use:
 
