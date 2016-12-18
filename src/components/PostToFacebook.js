@@ -5,13 +5,6 @@ import { connect } from 'react-redux'
 
 import store from '../store'
 
-const privacy = {
-  EVERYONE: 'EVERYONE',
-  ALL_FRIENDS: 'ALL_FRIENDS',
-  FRIENDS_OF_FRIENDS: 'FRIENDS_OF_FRIENDS',
-  SELF: 'SELF',
-}
-
 class PostToFacebook extends Component {
   constructor(props) {
     super(props)
@@ -50,13 +43,12 @@ class PostToFacebook extends Component {
   }
 
   postToFacebook = () => {
-    axios.post(`${this.state.userData.userID}/photos`, {
+    axios.post(`https://graph.facebook.com/v2.8/${this.state.userData.id}/photos`, {
       caption: this.props.caption
         + this.props.tags.reduce((a, b, index) => {
           if (index) return `${a}, #${b}`
           else return `${a}`
         }, ''),
-      privacy: this.state.privacy,
       url: this.props.src,
       access_token: this.state.userData.token,
     }).then(() => {
@@ -75,13 +67,6 @@ class PostToFacebook extends Component {
           onClick={this.updateChoice.bind(this, 'privacy', 'EVERYONE')}
           selected={this.state.privacy === 'EVERYONE'}
         />
-          
-        <input type="radio" name="privacy" onClick={this.updateChoice.bind(this, 'privacy', 'ALL_FRIENDS')}
-               selected={this.state.privacy === 'ALL_FRIENDS'} />
-        <input type="radio" name="privacy" onClick={this.updateChoice.bind(this, 'privacy', 'FRIENDS_OF_FRIENDS')}
-               selected={this.state.privacy === 'FRIENDS_OF_FRIENDS'} />
-        <input type="radio" name="privacy" onClick={this.updateChoice.bind(this, 'privacy', 'SELF')}
-               selected={this.state.privacy === 'SELF'} />
 
         <button className="btn blue" style={{ marginTop: '10px' }} onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
 
