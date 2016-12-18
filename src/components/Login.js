@@ -38,14 +38,16 @@ export default class Login extends Component {
         )
 
         window.FB.api(
-          `/${response.authResponse.userID}?fields=cover`,
+          `/${response.authResponse.userID}?fields=cover,name`,
           (response) => {
             if (response && !response.error) {
               const cover = response.cover ? response.cover.source : ''
+              const name = response.name
               store.dispatch({
                 type: 'ADD_USER',
                 user: {
                   cover,
+                  name,
                 }
               })
             }

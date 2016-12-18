@@ -8,8 +8,8 @@ class Image extends React.Component {
     this.state = {
       src: this.props.src,
       tags: this.props.tags,
-      captions: this.props.captions,
-      userData: store.getState().userState
+      captions: this.props.captions
+,      userData: store.getState().userState
     }
   }
 

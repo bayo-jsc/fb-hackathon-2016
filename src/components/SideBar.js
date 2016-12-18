@@ -17,7 +17,7 @@ class SideBar extends React.Component {
   constructor() {
     super()
     this.state = {
-      userData: {}
+      userData: store.getState().userState
     }
 
     store.subscribe(() => {
@@ -47,7 +47,7 @@ class SideBar extends React.Component {
                       <img className="circle" src={ this.state.userData.avatar } role="user" />
                     </a>
                     <a href="#">
-                      <span className="white-text name">John Doe</span>
+                      <span className="white-text name">{ this.state.userData.name }</span>
                     </a>
                   </div>
                   : ''
