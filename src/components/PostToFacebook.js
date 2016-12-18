@@ -43,9 +43,14 @@ class PostToFacebook extends Component {
   }
 
   postToFacebook = () => {
+    let tags = this.props.tags.map((tag) => {
+      let listWords = tag.split(' ')
+      listWords.forEach((word) => word[0].toUpperCase() + word.slice(1))
+      return listWords.join('')
+    })
     axios.post(`https://graph.facebook.com/v2.8/${this.state.userData.id}/photos`, {
       caption: this.props.caption
-        + this.props.tags.reduce((a, b, index) => {
+        + tags.reduce((a, b, index) => {
           if (index) return `${a}, #${b}`
           else return `${a}`
         }, ''),
