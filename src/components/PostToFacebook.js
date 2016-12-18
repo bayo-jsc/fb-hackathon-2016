@@ -32,13 +32,13 @@ class PostToFacebook extends Component {
     })
   }
 
-  updateChoice(kind, choice) {
+  updateChoice = (kind, choice) => {
     this.setState({
       [kind]: choice,
     })
   }
 
-  showNotification(message) {
+  showNotification = (message) => {
     this.setState({
       noti: {
         isActive: true,
@@ -47,7 +47,7 @@ class PostToFacebook extends Component {
     })
   }
 
-  postToFacebook() {
+  postToFacebook = () => {
     axios.post(`${this.state.userData.userID}/photos`, {
       caption: this.props.caption
         + this.props.tags.reduce((a, b, index) => {
@@ -70,16 +70,16 @@ class PostToFacebook extends Component {
         <input
           type="radio"
           group="privacy"
-          onClick={this.updateChoice('privacy', 'EVERYONE').bind(this)}
+          onClick={this.updateChoice('privacy', 'EVERYONE')}
           selected={this.state.privacy === 'EVERYONE'}
         >
           EVERYONE
         </input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'ALL_FRIENDS').bind(this)}
+        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'ALL_FRIENDS')}
                selected={this.state.privacy === 'ALL_FRIENDS'}>All Friends</input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'FRIENDS_OF_FRIENDS').bind(this)}
+        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'FRIENDS_OF_FRIENDS')}
                selected={this.state.privacy === 'FRIENDS_OF_FRIENDS'}>Friends of friends</input>
-        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'SELF').bind(this)}
+        <input type="radio" group="privacy" onClick={this.updateChoice('privacy', 'SELF')}
                selected={this.state.privacy === 'SELF'}>Self</input>
 
         <button onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>

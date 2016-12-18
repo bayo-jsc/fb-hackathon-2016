@@ -34,7 +34,7 @@ class Image extends React.Component {
       <div className="caption indigo lighten-3" >
         { caption } 
       </div>
-        { 
+             { 
           this.state.userData.isAuthenticated 
           ? <PostToFacebook src={ this.state.src } tags={ this.state.tags } caption={ caption } />
           : ''
