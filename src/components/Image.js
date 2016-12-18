@@ -15,15 +15,19 @@ class Image extends React.Component {
         <i className="close material-icons" onClick={ this.deleteTag.bind(this, index) }>close</i>
       </div>
     ))
+
+    let captions = this.state.captions.map((caption, index) => (
+      <div className="caption indigo lighten-3">
+        { caption }
+      </div>
+    ))
     return (
       <div className="image indigo lighten-5">
         <img className="materialboxed" src={ this.props.src } alt={ this.props.src } />
         <div className="tags">  
           { tags }
         </div> 
-        <div className="caption indigo lighten-3">
-          { this.props.caption || '' }
-        </div>
+        { captions }
 
         <div className="divider" />
       </div>

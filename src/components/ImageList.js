@@ -2,31 +2,32 @@ import React from 'react'
 import Image from './Image.js'
 import store from '../store'
 
+import { connect } from 'react-redux'
+
 class ImageList extends React.Component {
   constructor() {
     super()
     this.state = {
-      images: store.getState().image.images,
+      images: store.getState().image,
     }
   }
-  componentDidMount() {
-    store.subscribe(() => {
-      this.setState({
-        images: store.getState().image.images
-      })
-    }) 
-  }
-  render() {
-  	let images = this.state.images.map((image) => (
-  			<Image src={ image.src } tags={ image.tags } caption={ image.caption } key={ image.src } />
-  	)) 
 
+
+  render() {
   	return (
   		<div className="image-list">
-        { images }
+        { this.props.images.map((image) => (
+        <Image src={ image.src } tags={ image.tags } caption={ image.caption } key={ image.src } />
+    ))  }
       </div>
   	)
   }
 }
 
-export default ImageList
+function mapStateToProps(state) {
+  return {
+    images: state.image.images,
+  };
+}
+
+export default connect(mapStateToProps)(ImageList)
