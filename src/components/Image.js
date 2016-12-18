@@ -1,13 +1,24 @@
 import React from 'react'
+import PostToFacebook from './PostToFacebook'
+import store from '../store.js'
 
 class Image extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      src: this.props.src,
       tags: this.props.tags,
       captions: this.props.captions,
+      userData: {}
     }
-    console.log(this.state)
+
+
+    store.subscribe(() => {
+      this.setState({
+        userData: store.getState().userState
+      })
+    })
+
   }
 
   render() {
@@ -19,8 +30,15 @@ class Image extends React.Component {
     ))
 
     let captions = this.state.captions.map((caption, index) => (
-      <div className="caption indigo lighten-3" key={ caption }>
-        { caption }
+      <div key={ caption }>
+      <div className="caption indigo lighten-3" >
+        { caption } 
+      </div>
+        { 
+          this.state.userData.isAuthenticated 
+          ? <PostToFacebook src={ this.state.src } tags={ this.state.tags } caption={ caption } />
+          : ''
+        } 
       </div>
     ))
     return (
