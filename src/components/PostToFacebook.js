@@ -84,7 +84,7 @@ class PostToFacebook extends Component {
         <input type="radio" name="privacy" onClick={this.updateChoice.bind(this, 'privacy', 'SELF')}
                selected={this.state.privacy === 'SELF'} />
 
-        <button onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
+        <button className="btn blue" style={{ marginTop: '10px' }} onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
 
         <Notification
           isActive={this.state.noti.isActive}
