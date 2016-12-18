@@ -36,7 +36,7 @@ class Image extends React.Component {
       </div>
       { 
           this.state.userData.isAuthenticated 
-          ? <PostToFacebook src="roger" tags={ ['test1', 'test2'] } caption={ caption } />
+          ? <PostToFacebook src={ this.state.src } tags={ this.state.tags } caption={ caption } />
           : ''
         } 
       </div>

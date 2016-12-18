@@ -69,7 +69,7 @@ class PostToFacebook extends Component {
           selected={this.state.privacy === 'EVERYONE'}
         />
 
-        <button onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
+        <button className="btn blue" style={{ marginTop: '10px' }} onClick={this.postToFacebook.bind(this)}>Post to Facebook</button>
 
         <Notification
           isActive={this.state.noti.isActive}
