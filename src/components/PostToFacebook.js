@@ -5,13 +5,6 @@ import { connect } from 'react-redux'
 
 import store from '../store'
 
-const privacy = {
-  EVERYONE: 'EVERYONE',
-  ALL_FRIENDS: 'ALL_FRIENDS',
-  FRIENDS_OF_FRIENDS: 'FRIENDS_OF_FRIENDS',
-  SELF: 'SELF',
-}
-
 class PostToFacebook extends Component {
   constructor(props) {
     super(props)
@@ -50,7 +43,7 @@ class PostToFacebook extends Component {
   }
 
   postToFacebook = () => {
-    axios.post(`${this.state.userData.userID}/photos`, {
+    axios.post(`https://graph.facebook.com/v2.8/${this.state.userData.userID}/photos`, {
       caption: this.props.caption
         + this.props.tags.reduce((a, b, index) => {
           if (index) return `${a}, #${b}`

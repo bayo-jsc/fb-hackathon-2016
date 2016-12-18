@@ -12,6 +12,7 @@ export default class Login extends Component {
 
   openLoginForm = () => {
     window.FB.login((response) => {
+      console.log(response)
       if (response.authResponse) {
         store.dispatch({
           type: 'ADD_USER',
@@ -50,6 +51,7 @@ export default class Login extends Component {
             }
           }
         )
+
       } else {
         console.log('Login failed!')
       }

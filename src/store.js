@@ -40,8 +40,7 @@ const imageReducer = (state = {
 }, action) => {
   switch (action.type) {
     case 'ADD_IMAGE': {
-      let images = state.images.slice()
-      images.push(action.image)
+      const images = state.images.concat(action.image)
 
       return {
         images,
