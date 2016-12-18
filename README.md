@@ -24,6 +24,8 @@ Facebook APIs used: Login API, Graph API
 
 ## Screenshots
 (Image 1)[https://snag.gy/SOrDmP.jpg]  
+![Image 1](https://i.snag.gy/INSnWZ.jpg)
 
 
 (Image 2)[https://snag.gy/INSnWZ.jpg]
+![Image 2](https://i.snag.gy/INSnWZ.jpg)
