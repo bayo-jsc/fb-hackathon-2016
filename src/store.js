@@ -35,9 +35,49 @@ const userReducer = function(state = {
 	}
 }
 
+const imageReducer = (state = {
+  images: []
+}, action) => {
+  switch (action.type) {
+    case 'ADD_IMAGE': {
+      return {
+        images: state.images.concat(action.images),
+      }
+    }
+
+    case 'REMOVE_IMAGE': {
+      let images = state.images.slice()
+
+      return {
+        images: images.slice(action.index, 1)
+      }
+    }
+
+    case 'CHANGE_CAPTION': {
+      let images = state.images.slice()
+      images[action.index].caption = action.caption
+
+      return {
+        images,
+      }
+    }
+
+    case 'RESET': {
+      return {
+        images: []
+      }
+    }
+
+    default: {
+      return state
+    }
+  }
+}
+
 // // Combine Reducers
 const reducers = combineReducers({
   userState: userReducer,
+  image: imageReducer,
 });
 
 const store = createStore(reducers, {
