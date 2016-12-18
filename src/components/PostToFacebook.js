@@ -55,7 +55,7 @@ class PostToFacebook extends Component {
           else return `${a}`
         }, ''),
       privacy: this.state.privacy,
-      url: this.props.image,
+      url: this.props.src,
       access_token: this.state.userData.token,
     }).then(() => {
       this.showNotification('Post success!')
