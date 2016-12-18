@@ -11,14 +11,14 @@ class Image extends React.Component {
       captions: this.props.captions,
       userData: {}
     }
+  }
 
-
+  componentDidMount = () => {
     store.subscribe(() => {
       this.setState({
         userData: store.getState().userState
       })
     })
-
   }
 
   render() {
