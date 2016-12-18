@@ -34,16 +34,15 @@ class Image extends React.Component {
       <div className="caption indigo lighten-3" >
         { caption } 
       </div>
-             
+      { 
+          this.state.userData.isAuthenticated 
+          ? <PostToFacebook src="roger" tags={ ['test1', 'test2'] } caption={ caption } />
+          : ''
+        } 
       </div>
     ))
     return (
       <div className="image indigo lighten-5">
-      { 
-          this.state.userData.isAuthenticated 
-          ? <PostToFacebook src={ this.state.src } tags={ this.state.tags } caption="Hellow w" />
-          : ''
-        } 
         <img className="materialboxed" src={ this.props.src } alt={ this.props.src } />
         <div className="tags">  
           { tags }
