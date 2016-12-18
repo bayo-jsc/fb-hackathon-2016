@@ -48,17 +48,12 @@ class App extends React.Component {
           <Navbar />
           {this.state.userData.isAuthenticated ? <Logout /> : <Login />}
           <SideBar />
-          <div className="container">
-            <Router history={hashHistory}>
-              <Route>
-                <Route path="/" component={Homepage}></Route>
-                <Route path="/upload" component={Uploader}></Route>
-                <Route path="/share" component={PostToFacebook}></Route>
-                <Route path="/list" component={ImageList}></Route>
-              </Route>
-            </Router>
-          </div>
-          <Footer />
+          <Router history={hashHistory}>
+            <Route path="/" component={Homepage}></Route>
+            <Route path="/upload" component={Uploader}></Route>
+            <Route path="/list" component={ImageList}></Route>
+            <Route path="/share" component={PostToFacebook}></Route>
+          </Router>
         </div>
       </Provider>
     );

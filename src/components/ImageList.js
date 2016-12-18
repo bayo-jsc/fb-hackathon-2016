@@ -4,21 +4,36 @@ import store from '../store'
 
 import { connect } from 'react-redux'
 
-class ImageList extends React.Component {
-  constructor() {
-    super()
+export default class ImageList extends React.Component {
+  constructor(props) {
+    super(props)
     this.state = {
-      images: store.getState().image,
+      images: [],
     }
   }
+
+  componentDidMount = () => {
+    store.subscribe(() => {
+      this.setState({
+        images: store.getState().image.images
+      })
+    })
+  }
+
+  componentWillUnmount = () => {
+    // store.unsubscribe()
+  }
+
 
 
   render() {
   	return (
   		<div className="image-list">
-        { this.props.images.map((image) => (
-        <Image src={ image.src } tags={ image.tags } caption={ image.caption } key={ image.src } />
-    ))  }
+        {
+          this.state.images.map((image) => (
+            <Image src={ image.src } tags={ image.tags } caption={ image.caption } key={ image.src } />
+          ))
+        }
       </div>
   	)
   }
@@ -30,4 +45,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(ImageList)
+// export default connect(mapStateToProps)(ImageList)
